@@ -11,7 +11,7 @@ import UIKit
 class GroupModel: NSObject, NSURLSessionDataDelegate {
     var groupName : String?
     var group_id : Int?
-    var groupUsers : Set<UserModel> = Set<UserModel>()
+    var groupUsers = [Int: UserModel]()
     
     var data : NSMutableData = NSMutableData()
     
@@ -22,14 +22,7 @@ class GroupModel: NSObject, NSURLSessionDataDelegate {
         super.init()
         
         self.group_id = group_id
-        let url_path = "http://ec2-52-32-204-127.us-west-2.compute.amazonaws.com/~chens/groupuserrequest.php?groupid=\(group_id)"
-        print(url_path)
-        let group_user_request_url : NSURL = NSURL(string: url_path)!
-        var session: NSURLSession!
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        let task = session.dataTaskWithURL(group_user_request_url)
-        task.resume()
+        updateGroupLocations();
     }
     
     // New group creation
@@ -40,6 +33,15 @@ class GroupModel: NSObject, NSURLSessionDataDelegate {
         
     }
     
+    func updateGroupLocations() {
+        let group_user_request_url = HTTPHelper.getGroupURL(group_id!)
+        var session: NSURLSession!
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        session = NSURLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        let task = session.dataTaskWithURL(group_user_request_url)
+        task.resume()
+    }
+    
     override var description: String {
         var user_description_acc : String
         if (group_id != nil) {
@@ -47,7 +49,7 @@ class GroupModel: NSObject, NSURLSessionDataDelegate {
         } else {
             user_description_acc = "Group ID nil:"
         }
-        for um in groupUsers {
+        for (_, um) in groupUsers {
             user_description_acc += "\t" + um.description + "\n"
         }
         return user_description_acc
@@ -84,16 +86,20 @@ class GroupModel: NSObject, NSURLSessionDataDelegate {
         
         var jsonElement: NSDictionary = NSDictionary()
         
-        for (var i = 0; i < jsonResult.count; i++) {
+        for i in 0..<jsonResult.count  {
             jsonElement = jsonResult[i] as! NSDictionary
             if let username = jsonElement["username"] as? String,
                 let latitude = jsonElement["latitude"] as? String,
                 let longitude = jsonElement["longitude"] as? String,
                 let user_id = Int((jsonElement["user_id"] as? String)!) {
-                    let um : UserModel = UserModel(username: username, latitude: latitude, longitude : longitude, user_id: user_id)
-                    groupUsers.insert(um);
+                    
+                    if let user = groupUsers[user_id] {
+                        user.updateLocation(latitude, longitude: longitude)
+                    } else {
+                        let um : UserModel = UserModel(username: username, latitude: latitude, longitude : longitude, user_id: user_id)
+                        groupUsers[user_id] = um;
+                    }
             }
         }
     }
-    
 }

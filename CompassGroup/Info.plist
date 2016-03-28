@@ -14,6 +14,10 @@
             </dict>
         </dict>
     </dict>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application needs access to your location information</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This application needs access to your location information</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

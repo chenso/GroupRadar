@@ -17,6 +17,7 @@
 		4A35F7FD1C7553C00020B6BF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35F7FC1C7553C00020B6BF /* UserModel.swift */; };
 		4A35F7FF1C755D180020B6BF /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35F7FE1C755D180020B6BF /* GroupModel.swift */; };
 		4A35F8031C76354B0020B6BF /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35F8021C76354B0020B6BF /* HTTPHelper.swift */; };
+		6B3BB3660CADA3902F15226A /* libPods-CompassGroup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C5FBB0A803AA45E7EF56A9 /* libPods-CompassGroup.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C5FBB0A803AA45E7EF56A9 /* libPods-CompassGroup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompassGroup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE27167451C4B84E1A76A2F /* Pods-CompassGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompassGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-CompassGroup/Pods-CompassGroup.release.xcconfig"; sourceTree = "<group>"; };
 		4A35F7CB1C75083C0020B6BF /* CompassGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompassGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A35F7CE1C75083C0020B6BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A35F7D01C75083C0020B6BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +55,9 @@
 		4A35F7F01C75083C0020B6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A35F7FC1C7553C00020B6BF /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4A35F7FE1C755D180020B6BF /* GroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
-		4A35F8021C76354B0020B6BF /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
+		4A35F8021C76354B0020B6BF /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPHelper.swift; path = ../HTTPHelper.swift; sourceTree = "<group>"; };
+		4A3FE3541CA9A0B700EECC24 /* CompassGroup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompassGroup-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB6320D6727DA2C3CDE3E560 /* Pods-CompassGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompassGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CompassGroup/Pods-CompassGroup.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3BB3660CADA3902F15226A /* libPods-CompassGroup.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,14 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		429A07FC0947D7A48E43C5C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB6320D6727DA2C3CDE3E560 /* Pods-CompassGroup.debug.xcconfig */,
+				1DE27167451C4B84E1A76A2F /* Pods-CompassGroup.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A35F7C21C75083C0020B6BF = {
 			isa = PBXGroup;
 			children = (
-				4A35F8021C76354B0020B6BF /* HTTPHelper.swift */,
 				4A35F7CD1C75083C0020B6BF /* CompassGroup */,
 				4A35F7E21C75083C0020B6BF /* CompassGroupTests */,
 				4A35F7ED1C75083C0020B6BF /* CompassGroupUITests */,
 				4A35F7CC1C75083C0020B6BF /* Products */,
+				429A07FC0947D7A48E43C5C0 /* Pods */,
+				4A4E548B1A77223E73F6FCF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +120,7 @@
 		4A35F7CD1C75083C0020B6BF /* CompassGroup */ = {
 			isa = PBXGroup;
 			children = (
+				4A35F8021C76354B0020B6BF /* HTTPHelper.swift */,
 				4A35F7CE1C75083C0020B6BF /* AppDelegate.swift */,
 				4A35F7D01C75083C0020B6BF /* ViewController.swift */,
 				4A35F7D21C75083C0020B6BF /* Main.storyboard */,
@@ -112,6 +129,7 @@
 				4A35F7DA1C75083C0020B6BF /* Info.plist */,
 				4A35F7FC1C7553C00020B6BF /* UserModel.swift */,
 				4A35F7FE1C755D180020B6BF /* GroupModel.swift */,
+				4A3FE3541CA9A0B700EECC24 /* CompassGroup-Bridging-Header.h */,
 			);
 			path = CompassGroup;
 			sourceTree = "<group>";
@@ -134,6 +152,14 @@
 			path = CompassGroupUITests;
 			sourceTree = "<group>";
 		};
+		4A4E548B1A77223E73F6FCF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01C5FBB0A803AA45E7EF56A9 /* libPods-CompassGroup.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A35F7F31C75083C0020B6BF /* Build configuration list for PBXNativeTarget "CompassGroup" */;
 			buildPhases = (
+				788BD370CA6CA04DC0A5CDE7 /* Check Pods Manifest.lock */,
 				4A35F7C71C75083C0020B6BF /* Sources */,
 				4A35F7C81C75083C0020B6BF /* Frameworks */,
 				4A35F7C91C75083C0020B6BF /* Resources */,
+				B73610C0B6CD2E483A993207 /* Embed Pods Frameworks */,
+				07241DD960A83CE1656E0DF8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +288,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07241DD960A83CE1656E0DF8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CompassGroup/Pods-CompassGroup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		788BD370CA6CA04DC0A5CDE7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B73610C0B6CD2E483A993207 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CompassGroup/Pods-CompassGroup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A35F7C71C75083C0020B6BF /* Sources */ = {
@@ -409,23 +486,27 @@
 		};
 		4A35F7F41C75083C0020B6BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB6320D6727DA2C3CDE3E560 /* Pods-CompassGroup.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CompassGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.CompassGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CompassGroup/CompassGroup-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		4A35F7F51C75083C0020B6BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE27167451C4B84E1A76A2F /* Pods-CompassGroup.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CompassGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.CompassGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CompassGroup/CompassGroup-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -496,6 +577,7 @@
 				4A35F7F51C75083C0020B6BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A35F7F61C75083C0020B6BF /* Build configuration list for PBXNativeTarget "CompassGroupTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +586,7 @@
 				4A35F7F81C75083C0020B6BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A35F7F91C75083C0020B6BF /* Build configuration list for PBXNativeTarget "CompassGroupUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +595,7 @@
 				4A35F7FB1C75083C0020B6BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
